@@ -46,10 +46,42 @@ let inp1 = document.getElementById("first")
 let inp2 = document.getElementById("second")
 let button = document.querySelectorAll("button")
 let p = document.querySelector("p")
-for(let i =0; i<button.length;i++){
-  if(i==0){
-    
-  }
+// button[0].addEventListener('click', function(){
+//     let sum = Number(inp1.value)+Number(inp2.value)
+//     p.innerText = "Sum " + sum
+// })
+// button[1].addEventListener('click', function(){
+//     let sum = Number(inp1.value)-Number(inp2.value)
+//     p.innerText = "Substraction " + sum
+// })
+// button[2].addEventListener('click', function(){
+//     let sum = Number(inp1.value)*Number(inp2.value)
+//     p.innerText = "Multiplication " + sum
+// })
+// button[3].addEventListener('click', function(){
+//     let sum = Number(inp1.value)/Number(inp2.value)
+//     p.innerText = "Division " + sum.toFixed(2)
+// })
+
+for(let i = 0; i<button.length;i++){
+    button[i].addEventListener('click',function(){
+   Task(i)
+    })
+}
+function Task(i){
+if(i==0){
+    let sum = Number(inp1.value)+Number(inp2.value)
+    p.innerText = "Sum " + sum
+}else if(i==1){
+    let sum = Number(inp1.value)-Number(inp2.value)
+    p.innerText = "Substraction " + sum   
+}else if(i==2){
+    let sum = Number(inp1.value)*Number(inp2.value)
+    p.innerText = "Multiplication " + sum
+}else{
+    let sum = Number(inp1.value)/Number(inp2.value)
+    p.innerText = "Division " + sum.toFixed(2)  
+}
 }
 
 
