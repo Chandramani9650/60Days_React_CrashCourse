@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Home.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .Cart_Product>div{
+       padding: 20px;
+       width: 80%;
+       /* height: 200px; */
+       margin: auto;
+       display: flex;
+       justify-content: space-between;
+       border: 1px solid red;
+       margin-bottom: 20px;
+       margin-top: 20px;
+       border-radius: 10px;
+       background-color: rgb(197, 199, 199);
+      }
+      .Cart_Product>div>div{
+        /* border: 1px solid green; */
+        justify-content: space-between;
+        align-items: center;
+        /* width: 100%; */
+        padding: 10px;
+        
+      }
+      .Cart_Product>div>div p{
+        font-weight: 600;
+      }
+      .Cart_Product>div>div>div button{
+        /* border: 1px solid blue; */
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border-radius: 2px;
+      }
+      .Cart_Product>div img{
+        width:200px;
+        height: 100%;
+        margin-right: 100px;
+        border-radius: 10px;
+      }  
+    </style>
+</head>
+<body>
+    <nav class="hidden md:block">
+        <div>
+            <div class="flex justify-evenly items-center ">
+        <img class="w-32" src="https://th.bing.com/th?id=OIP.dgAB3gW8xUQydo5b2rpolgHaEU&w=327&h=190&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
+        <span class="search border p-1 pl-4 flex items-center rounded-md"><i class="fa-solid fa-magnifying-glass text-lime-500"></i>   <input class="p-1 pl-4 w-full border-none focus:outline-none" type="search" placeholder="search for here..."></span>
+      
+        <a class="bg-slate-100 p-2 rounded-md" href=""><span class="pr-1"> <i class="fa-solid fa-compass"></i></span>select Location</a>
+        
+        <a href="" class="flex"><i class="fa-solid fa-cart-arrow-down"></i><p id="NoOfcart" class="-mt-1 bg-black text-white text-center  text-xs ml-1 font-bold"> </p> </a>
+            </div>
+            <div class="navbox2  flex justify-center items-center pb-2 ">
+                <select name="" id="" class="mr-8">
+                <option value="">mega</option>
+                </select>
+                <a href="">Exotic Fruits & V..</a>
+                <a href="">Tea</a>
+                <a href="">Ghee</a>
+                <a href="">Nandani</a>
+                <a href="">forword</a>
+                <span class="mr-2">|</span>
+                <a href="">smart basket</a>
+                <a href="">Offer</a>
+            </div>
+        </div>
+      </nav>
+      <!-- ...........................................Product list...... -->
+      <div class="Cart_Product">
+
+      </div>
+
+
+</body> 
+</html>
+<script src="Cart.js"></script>

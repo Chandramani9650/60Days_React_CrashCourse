@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.containe {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    width: 85%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="containe">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="bg-gray-800 p-2 text-white font-bold" type="submit">Login</button>
+        </form>
+        <a class="text-lime-500 p-2" href="Signup.html">Go To Signup Page</a>
+    </div>
+</body>
+</html>
+<script>
+ let form = document.querySelector("form")
+    let input = document.querySelectorAll("form input")
+    let LoginData = JSON.parse(localStorage.getItem("LoginData"))
+    let arr = []
+    form.addEventListener('submit', HandleSubmit)
+    function HandleSubmit(e){
+        e.preventDefault()
+        let obj = {}
+        obj.email = input[0].value
+        obj.pass = input[1].value
+        
+        arr.push(obj)
+        saveDeta(arr)
+        
+        
+        
+    }
+    function saveDeta(arr){
+        // console.log(arr[0].email);
+    LoginData.map((item)=>{
+        console.log(LoginData);
+        if(item.Email==arr[0].email && item.pass==arr[0].pass){
+        alert("Login Sucessful")
+        window.location.href = "Product.html"
+        }else{
+            alert("You Have enterd Wrong email or password")
+            console.log(arr[0].email,item.Email);
+        }
+    })
+       
+    }
+
+
+</script>

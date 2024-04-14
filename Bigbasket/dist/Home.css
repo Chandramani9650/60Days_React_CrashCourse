@@ -1,0 +1,198 @@
+.main_container{
+    width: 80%;
+    margin: auto;
+  }
+   nav{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   } 
+   .search{
+    width: 400px;
+   }
+   .navbox2>a{
+    background: white;
+    text-align: left;
+     margin-right: 5%;
+     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+   }
+   .navbox2>a:hover{
+    
+    background:linear-gradient(white,rgb(248, 248, 250),rgb(207, 234, 207), rgb(233, 233, 188), rgb(237, 135, 135));
+    
+   }
+
+   #signin{
+    width: 400px;
+    height: 300px;
+  
+    top: 200px;
+    left: -500px;
+    z-index: 4;
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    /* backdrop-filter: blur(5px); */
+  
+   }
+   #signin:focus{
+    opacity: 1;
+    background-color: rgb(79, 77, 77);
+   }
+   .icon>a{
+    width: 112px;
+    background-color: rgb(214, 208, 208);
+    font-size: 12px;
+ 
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+   }
+
+
+  
+
+   @media all and (max-width:660px){
+
+    .icon>a{
+    width: 70px;
+    font-size: 8px;
+    margin-right: 5px;
+   
+   }
+   }
+
+   #smart{
+    display:grid;
+  width: 100%;
+  /* border: 1px solid red; */
+ 
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+   gap: 20px;
+   text-align: center;
+  
+
+   }
+   #smart>div{
+    
+    padding: 15px;
+    /* margin-right: 8px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  
+    
+   }
+   @media all and (max-width:760px){
+    #smart{
+        grid-template-columns: repeat(2, 1fr);
+    }
+   }
+
+
+
+#bankoffer,#TopOffer,#fruteVegitable,#Snacks,#Cleaning{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    gap: 10px;
+    
+}
+
+
+#Staples,#Beverages,#Beauty,#Kitchen{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 10px;
+    gap: 10px; 
+
+}
+
+#Staples img,#Beverages img, #Beauty img, #Kitchen img{
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer; 
+   
+}
+#Staples img:hover,#Beverages div img:hover,#Beauty img:hover,#Kitchen img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+#bankoffer div img, #TopOffer div img,#fruteVegitable div img, #Snacks div img,#Cleaning div img{
+     border-radius: 20px;
+     cursor: pointer; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
+#bankoffer div img:hover, #TopOffer div img:hover,#fruteVegitable div img:hover, #Snacks div img:hover,#Cleaning div img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.01);
+}
+
+@media all and (max-width:760px){
+    #bankoffer,#TopOffer, #fruteVegitable,#Snacks, #Cleaning{
+        grid-template-columns: repeat(2, 1fr);
+      
+    } 
+    #Staples,#Beverages,#Beauty, #Kitchen{
+   
+        grid-template-columns: repeat(2, 1fr);
+       
+    } 
+}
+
+#slider>div{
+width: 100vw;
+
+padding: 10px;
+
+position: relative;
+}
+#slider>div img{
+    width: 100%;
+    object-fit: cover; 
+   
+}
+
+
+@media all and (max-width:760px){
+    .Header>div{
+ grid-template-columns: repeat(2, 1fr);
+ gap: 40px;
+    }  
+}
+.box3 i{
+margin-left: 15px;
+font-size: 20px;
+padding: 5px;
+cursor: pointer;
+transition: all 1s ease;
+}
+.box3 i:hover{
+   
+    border-radius: 6px;
+background-color: white;
+color: black;
+}
+.Product_Page button{
+    font-size: 12px;
+    width: 180px;
+    text-align: left;
+    font-family: sans-serif;
+    color: rgb(44, 43, 43);
+}
+.Product_Show>div{
+padding: 10px;
+/* border: 1px solid red; */
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Product_Show>div img{
+    width: 100%;
+    
+}
+
+

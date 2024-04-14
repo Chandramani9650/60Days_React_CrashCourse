@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Home.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+    .slider{
+        width: 100%;
+      height: 300px;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        /* overflow: hidden; */
+
+    }
+    .slider>img{
+        position: absolute;
+      width: 100%;
+        border-radius: 20px;
+       
+     
+       
+    
+    }
+  
+  
+   </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="hidden md:block mb-5 bg-white">
+        <div>
+            <div class="flex justify-evenly items-center ">
+        <img class="w-32" src="https://th.bing.com/th?id=OIP.dgAB3gW8xUQydo5b2rpolgHaEU&w=327&h=190&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
+        <span class="search border p-1 pl-4 flex items-center rounded-md"><i class="fa-solid fa-magnifying-glass text-lime-500"></i>   <input id="Searchbar" class="p-1 pl-4 w-full border-none focus:outline-none" type="search" placeholder="search for here..."></span>
+      
+        <a class="bg-slate-100 p-2 rounded-md" href=""><span class="pr-1"> <i class="fa-solid fa-compass"></i></span>select Location</a>
+        
+        <a href="Cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            </div>
+            <div class="navbox2  flex justify-center items-center pb-2 ">
+                <select name="" id="" class="mr-8">
+                <option value="">mega</option>
+                </select>
+                <a href="">Exotic Fruits & V..</a>
+                <a href="">Tea</a>
+                <a href="">Ghee</a>
+                <a href="">Nandani</a>
+                <a href="">forword</a>
+                <span class="mr-2">|</span>
+                <a href="">smart basket</a>
+                <a href="">Offer</a>
+            </div>
+        </div>
+      </nav> 
+      
+      <!-- .......................................................... -->
+      <div class="cont w-4/5 m-auto ">
+        <section class="m-auto">
+            <div class="p-2"><a href="index.html"><i class="fa-solid fa-house mr-2"></i> Home /</a>
+         </div>
+           </section>
+    
+          <section class="slider relative   overflow-hidden mt-4">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/B2C032109362-17152-web-banner-100424.jpg?tr=w-1920,q=80" alt="">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/B2C032109362-17156-web-100424-all.jpg?tr=w-1920,q=80" alt="">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/B2C032109362-17152-web-banner-100424.jpg?tr=w-1920,q=80" alt="">
+          
+          </section>
+    
+          <h2 class="text-xl">Rice & Rice Products
+            (782)</h2>
+
+              <div class="filter flex justify-between  mt-2 mb-3">
+               <div>
+                <button id="Hidefilter" class="p-2 pl-3 pr-3 border border-black rounded-md hover:bg-slate-800 hover:text-white"><i class="fa-regular fa-eye-slash"></i> Hide Filter</button>
+               </div>
+               <div>
+              
+               
+             
+                <select name="" id="select" class="p-2  border border-black rounded-md  appearance-none absolute right-32 shadow-2xl hover:bg-slate-700 hover:text-white">
+                  <option value=""> Relevence   <i class="fa-solid fa-filter"></i></option>
+                  <option value="LowToHigh">Price - Low to High</option>
+                  <option value="HighToLow">Price - High to Low</option>
+                  <option value="RatingHighToLow">Rating: High To Low</option>
+                  <option value="RatingLowToHigh">Rating - Low to High</option>
+                </select>
+               
+                
+               </div>
+
+              </div>
+
+              <hr class="border-dashed border-slate-500">
+<!-- ...............................................product_Page................................ -->
+              <div class="Product_Page flex mt-4">
+                <div id="SortData" class="shadow-2xl p-3 h-60 ">
+                  <h2 class="text-xl font-bold">Shop By Category</h2>
+                  <button>Cuts & Sprouts</button><br>
+                  <button>Exotic Fruits & Veggies</button><br>
+                  <button>Flower Bouquets, Bunches</button><br>
+                  <button>Fresh Fruits</button><br>
+                  <button>Fresh Vegetables</button>
+
+                </div>
+                <div class="Product_Show ml-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
+                
+                </div>
+              </div>
+
+      </div>
+</body>
+</html>
+<script src="Product.js"></script>
