@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: aquamarine;
+}
+#drop{
+    position: relative;
+
+}
+#drop>div{
+    position: absolute;
+    border: 1px solid red;
+    display: none;
+}
+#drop>div li{
+    list-style: none;
+    padding: 10px;
+
+}
+#drop>div li:hover{
+    background-color: bisque;
+}
+#drop:hover div{
+display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="drop">dropdown
+            <div>
+                <li>home</li>
+                <li>about</li>
+                <li>contect</li>
+                <li>services</li>
+                <li>handle</li>
+            </div>
+        </div>
+        <div>
+            Logo
+        </div>
+    </div>
+</body>
+</html>
