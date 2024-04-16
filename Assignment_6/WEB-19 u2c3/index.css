@@ -1,0 +1,12 @@
+form{
+   width: 300px;
+   padding: 20px;
+    background-color: aqua;
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+tr td,th{
+    padding: 10px;
+}
