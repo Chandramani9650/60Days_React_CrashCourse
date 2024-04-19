@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(110, 115, 115);
+        }
+        .main{
+            width: 400px;
+            /* height: 150px; */
+            background-color: aqua;
+            padding: 20px;
+            text-align: center;
+       
+      
+        }
+        p{
+            /* margin-left: 20px; */
+            font-size: 20px;
+            font-weight: 700;
+            padding: 10px;
+            
+        }
+        h2{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <h2 style="color: red; font-family: sans-serif;">SmartWatch</h2>
+        <div class="container" style="display: flex; justify-content: center; align-items: center; ">
+            <h2></h2>
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div>
+            <button>START</button>
+            <button>STOP</button>
+            <button>RESET</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let btn = document.querySelectorAll("button")
+    let p = document.querySelector("p")
+    let h1 = document.querySelector("h1")
+    let h2 = document.querySelectorAll("h2")
+    let num = 0
+    let hor = 0
+    let min = 0
+    let hour = 0
+    h1.innerText = "0s"
+    p.innerText = "00"
+    btn[0].addEventListener('click', function(){
+        let delay = setInterval(()=>{
+        num+=1
+        p.innerText = num 
+        if(num>=100){
+          min+=1
+          num= 0
+          h1.innerText = min + "s"
+        }else if(min>=60){
+            min = 0
+            hor+=1
+            h2[1].innerText = hor + "m"
+        }else if(hor>=60){
+        hor = 0
+        hour+=1
+        h2[2].innerText = hour + "h"
+
+        }
+        
+
+        }, 0)
+
+        btn[1].addEventListener('click', function(){
+      
+      clearInterval(delay)
+     
+  })
+
+  
+btn[2].addEventListener('click', function(){
+    clearInterval(delay)
+    num = 0
+    hor = 0
+    min = 0
+    h1.innerText = "0s"
+    p.innerText = "00"
+})
+    })
+
+  
+
+</script>
