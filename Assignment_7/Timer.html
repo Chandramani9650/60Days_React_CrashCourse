@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        .main{
+            width: 400px;
+            background-color: aqua;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Timer</h1>
+            <h2><span id="sp1"></span> <span id="sp2"></span> <span id="sp3"></span></h2>
+          </div>
+          <div>
+            <button>Start</button>
+          <button>Reset</button>
+          </div>
+    </div>
+</body>
+</html>
+<script>
+    let btn = document.querySelectorAll("button")
+    let span = document.querySelectorAll("h2>span")
+    let sec = 0
+   let pt = 0
+    let delay;
+    let min = 5
+    span[1].innerText =  min + "m"
+    span[2].innerText = "00"+"s" 
+    function Starttimer(){
+        
+        delay = setInterval(()=>{
+     
+        sec--
+       console.log(sec);
+       if(sec<=0  && min===0){
+        sec = 0
+          Stoptimer()
+
+        }
+        else if(sec<0){
+         sec = 59
+         
+         if(min>0){
+          min--
+          
+         }
+        }
+        
+      updateDisplay()
+   
+        },100)
+        
+
+    }
+    function Stoptimer(){
+  clearInterval(delay)
+    }
+
+
+    function Reset(){
+      clearInterval(delay)
+       min = 5
+       sec = 0
+       updateDisplay()
+       span[2].textContent = "00" +"s"
+   
+   btn[0].innerText ="Start"
+
+    }
+
+    function updateDisplay() {
+            if(min==0){
+              span[1].textContent = ""
+              span[2].textContent = sec.toString()+"s"
+             
+            }else{
+              span[1].textContent = min.toString()+"m"
+              span[2].textContent = sec.toString()+"s"
+            }
+           
+           
+        }
+
+    btn[0].addEventListener('click', function(){
+        if(btn[0].innerText==="Start"){
+          Starttimer()
+          console.log("hello");
+          btn[0].innerText = "Stop"
+        }else{
+       Stoptimer()
+       btn[0].innerText ="Start"
+        }
+    })
+
+    btn[1].addEventListener('click', function(){
+      Reset()
+    })
+
+</script>

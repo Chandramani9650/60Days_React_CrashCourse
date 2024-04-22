@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .image{
+            width: 70vw;
+            height: 80vh;
+            background-color: aquamarine;
+            margin: auto;
+            position: relative;
+
+        }
+        .image img{
+            width: 100%;
+            height: 100%;
+          
+         
+            object-fit: cover;
+           
+            position: absolute;
+            /* scroll-behavior: smooth; */
+            
+            
+           
+            
+        }
+        .button{
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        .button button{
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+      <div class="image"><img src="" alt=""></div>
+      <div class="button">
+        
+        <button>Previous</button>
+        <button>Start</button>
+        <button>Next</button>
+      </div>
+</body>
+</html>
+<script>
+    let images = [
+        "https://images.unsplash.com/photo-1706859872183-a500efab7ef7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fHw%3D",
+        "https://images.unsplash.com/photo-1707162796436-e716e46e7e49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8fHw%3D",
+        "https://images.unsplash.com/photo-1707163384314-03b16c1e729e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTd8fHxlbnwwfHx8fHw%3D",
+        "https://images.unsplash.com/photo-1705931607938-fa3b30611e15?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1707150156073-c9ffe260d0bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1706807135531-ff90bb8909a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D",
+        "https://images.unsplash.com/photo-1707197066378-36583db5e892?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8fA%3D%3D",
+        "https://media.istockphoto.com/id/1592962716/photo/hand-pressing-social-media-icon.jpg?s=612x612&w=0&k=20&c=Tkmit7oPsWIs89-AMhCI9EvX6aW2sCsuKK5HPjvAjn8=",
+        "https://media.istockphoto.com/id/1462305681/photo/hand-shows-sign-of-top-service-quality-assurance-5-star-guarantee-standards-good-service.jpg?s=612x612&w=0&k=20&c=CmUq1l5ZYEOa0Ie3HzOfhRYMT_si55-hHORi0zRfeto=",
+        "https://media.istockphoto.com/id/1693857106/photo/mature-couple-power-walking-together-in-nature-on-sunny-day.jpg?s=612x612&w=0&k=20&c=voaw3hJxmxxXFFnZH8AXdlUXlESEN7kuYhbCiE_2Jlo=",
+        "https://media.istockphoto.com/id/1157322523/photo/rear-view-of-senior-friends-visiting-tourist-landmark-on-group-vacation-standing-on-wall.jpg?s=612x612&w=0&k=20&c=VvVvwWIPIiZV7sEyTN_5TPw7hiyl18_aO-qtg_PrzAU=",
+        "https://media.istockphoto.com/id/1330368487/photo/mechanic-works-on-the-engine-of-the-car-in-the-garage-repair-service-concept-of-car.jpg?s=612x612&w=0&k=20&c=atBTZD1qGd18nXVx-iuDFAq10UZOM28dJ3pcqHzTH90=",
+        "https://media.istockphoto.com/id/1186117725/photo/lets-get-down-to-business.jpg?s=612x612&w=0&k=20&c=ohju_jfcmv7GLaNF_lwlE1BFE-iMlz0nnC5WeHl71m0="
+    ]
+
+let image = document.querySelector(".image")
+let button = document.querySelectorAll("button")
+let img = document.querySelector("img")
+let intervalId;
+let flag= false
+let currentIndex =0
+let ind = 0
+// for(let i = 0; i<images.length; i++){
+// img.style.left = `${ind*100}%`
+// }
+img.src = images[0]
+function Startslide(){
+    intervalId = setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                console.log(currentIndex);
+                img.src = images[currentIndex]
+                // img.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 1000);
+}
+
+function Stopslide(){
+    clearInterval(intervalId)
+   
+}
+
+function Previous(){
+
+console.log(currentIndex);
+img.src = images[currentIndex-1]
+currentIndex--
+if(currentIndex==0){
+    currentIndex = images.length-1
+}
+
+
+
+    
+    
+}
+
+function Next(){
+    
+currentIndex++
+if(currentIndex==images.length){
+    currentIndex = 0
+}
+img.src = images[currentIndex]
+
+
+ console.log(currentIndex, "next");
+}
+
+button[1].addEventListener('click', function(){
+    if(button[1].innerText == "Start"){
+        Startslide()
+        button[1].innerText = "Stop"
+    }else if(button[1].innerText == "Stop"){
+          Stopslide()
+        button[1].innerText = "Start"
+
+    }
+})
+
+button[0].addEventListener('click', function(){
+  Stopslide()
+  Previous()
+
+})
+button[2].addEventListener('click', function(){
+    Stopslide()
+    Next()
+})
+
+
+
+
+</script>
