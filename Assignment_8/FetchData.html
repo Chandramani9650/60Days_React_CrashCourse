@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+            gap: 30px;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
+        }
+        @media all and (max-width:760px){
+          
+            #container{
+          
+            grid-template-columns: repeat(1, 1fr);
+            
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let url = "https://jsonplaceholder.typicode.com/todos"
+    let cont = document.querySelector("#container")
+    function getdeta(){
+        fetch(url).then(res=>res.json()).then((res)=>{
+            // console.log(res);
+            showdata(res)
+        })
+    }
+    getdeta()
+    function showdata(data){
+        data.map((item)=>{
+            let div = document.createElement("div")
+            // let 
+            let id = document.createElement("h3")
+            id.innerText ="Id : " + item.id
+            let userid = document.createElement("h3")
+            userid.innerText = "UserId : " +item.userId
+            let title = document.createElement("p")
+            title.innerText = item.title
+            div.append(id,userid, title)
+            cont.append(div)
+
+            console.log(item);
+        })
+    }
+    
+</script>
