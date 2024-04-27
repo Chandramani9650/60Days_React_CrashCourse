@@ -1,0 +1,52 @@
+h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: coral;
+    font-weight: 800;
+  }
+  #product{
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              padding: 20px;
+              /* align-items: center; */
+              /* justify-items: center; */
+              gap: 30px;
+          }
+          #product>div{
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              padding: 20px;
+              border-radius: 10px;
+          }
+          #product>div img{
+            width:200px;
+          }
+          #product>div button{
+            padding: 8px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 10px;
+  
+          }
+          #product div button:nth-child(odd){
+            background-color:green;
+            color: white;
+            
+          }
+          #product div button:nth-child(even){
+            background-color:red;
+            color: white;
+          }
+          @media all and (max-width:760px){
+            
+              #product{
+            
+              grid-template-columns: repeat(1, 1fr);
+              
+          }
+          }
+  
+    input{
+      padding: 5px;
+      margin-right: 10px;
+    }

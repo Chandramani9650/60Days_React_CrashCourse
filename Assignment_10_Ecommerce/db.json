@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "userId": 1,
+      "name": "Vijay",
+      "email": "v@gmail.com",
+      "password": "Vijay123",
+      "id": "e308"
+    },
+    {
+      "userId": 2,
+      "name": "Rekha",
+      "email": "rekha@gmail.com",
+      "password": "1234Rekha",
+      "id": "4aae"
+    },
+    {
+      "id": "2d78",
+      "name": "Chandramani Kumar",
+      "email": "cmmaurya9650@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "a354",
+      "name": "mukesh",
+      "email": "mukesh@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "products": [
+    {
+      "productId": 1,
+      "title": "SmartPhone",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+      "price": 15000,
+      "ratings": 5,
+      "id": "90a0"
+    },
+    {
+      "productId": 2,
+      "title": "TV",
+      "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+      "price": 25000,
+      "ratings": 4,
+      "id": "e570"
+    },
+    {
+      "productId": 3,
+      "title": "Laptop",
+      "src": "https://images-cdn.ubuy.co.in/633b75b241637808af7d4688-asus-laptop-l510-ultra-thin-laptop.jpg",
+      "price": 35000,
+      "ratings": 4.5,
+      "id": "4019"
+    },
+    {
+      "productId": 4,
+      "title": "Washing Machine",
+      "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+      "price": 20000,
+      "ratings": 3.2,
+      "id": "8906"
+    },
+    {
+      "productId": 5,
+      "title": "Microwave oven",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+      "price": 23000,
+      "ratings": 3.8,
+      "id": "a40c"
+    }
+  ],
+  "allUsersCart": {
+    "Vijay": [
+      {
+        "productId": 1,
+        "title": "SmartPhone",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+        "price": 15000,
+        "ratings": 5
+      },
+      {
+        "productId": 2,
+        "title": "TV",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": 4
+      }
+    ],
+    "Rekha": [
+      {
+        "productId": 4,
+        "title": "Washing Machine",
+        "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+        "price": 20000,
+        "ratings": 3.2
+      },
+      {
+        "productId": 5,
+        "title": "Microave oven",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+        "price": 23000,
+        "ratings": 3.8
+      }
+    ]
+  }
+}
