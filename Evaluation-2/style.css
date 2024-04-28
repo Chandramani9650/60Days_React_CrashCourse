@@ -1,0 +1,42 @@
+nav{
+    background-color: rgb(46, 44, 44);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+nav div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 10px; */
+}
+nav div select{
+    padding: 5px;
+    margin-left: 5px;
+}
+#tableData{
+    width: 70vw;
+    margin: auto;
+    border: 1px solid red;
+}
+#tableData table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#button{
+    width: 70vw;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+#button button{
+    padding: 10px;
+    margin-right: 20px;
+    background-color: green;
+    color: white;
+    font-weight: 900;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 10px;
+}
