@@ -84,7 +84,8 @@ let newdata = Data1.filter((item)=>item.department==vla)
 //filter by gender
 gender.addEventListener('change', function(){
   console.log(Data1);
-
+  let newdata = Data1.filter((item)=>item.gender==gender.value)
+  showData(newdata)
       
         showData(newdata)
     

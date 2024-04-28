@@ -17,9 +17,10 @@ nav div select{
 #tableData{
     width: 70vw;
     margin: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 #tableData table{
+    margin-top: 50px;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
