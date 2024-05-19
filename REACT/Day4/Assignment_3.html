@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        .itemDis{
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+
+        }
+        .itemDis div{
+            border: 1px solid black; 
+            padding: 10px; 
+        }
+        input{
+            padding: 7px;
+            width: 400px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        button{
+            padding: 7px;
+            width: 100px;
+            margin-bottom: 20px;
+            margin-top: 10px;  
+            margin-left: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    const UserData = [
+  { name: "John Doe", age: 30, experience: 5, department: "Engineering", salary: 75000 },
+  { name: "Jane Smith", age: 25, experience: 3, department: "Marketing", salary: 60000 },
+  { name: "Mike Johnson", age: 45, experience: 20, department: "HR", salary: 90000 },
+  { name: "Emily Davis", age: 35, experience: 10, department: "Finance", salary: 85000 },
+  { name: "James Wilson", age: 40, experience: 15, department: "Engineering", salary: 95000 },
+  { name: "Sarah Brown", age: 28, experience: 4, department: "Marketing", salary: 62000 },
+  { name: "David Clark", age: 50, experience: 25, department: "HR", salary: 100000 },
+  { name: "Linda Lewis", age: 32, experience: 6, department: "Finance", salary: 72000 },
+  { name: "Robert Walker", age: 38, experience: 12, department: "Engineering", salary: 80000 },
+  { name: "Karen Hall", age: 27, experience: 2, department: "Marketing", salary: 55000 },
+  { name: "Michael Young", age: 33, experience: 8, department: "HR", salary: 75000 },
+  { name: "Patricia King", age: 29, experience: 5, department: "Finance", salary: 70000 },
+  { name: "William Wright", age: 41, experience: 16, department: "Engineering", salary: 97000 },
+  { name: "Barbara Scott", age: 26, experience: 3, department: "Marketing", salary: 58000 },
+  { name: "Charles Green", age: 47, experience: 22, department: "HR", salary: 93000 },
+  { name: "Jennifer Adams", age: 36, experience: 11, department: "Finance", salary: 86000 },
+  { name: "Richard Baker", age: 31, experience: 7, department: "Engineering", salary: 79000 },
+  { name: "Susan Nelson", age: 34, experience: 9, department: "Marketing", salary: 63000 },
+  { name: "Joseph Carter", age: 43, experience: 18, department: "HR", salary: 89000 },
+  { name: "Margaret Mitchell", age: 37, experience: 13, department: "Finance", salary: 88000 }
+];
+
+
+
+  function UserProfile(){
+   const [data, setData] = React.useState("")
+   const [UseData, setUseData] = React.useState(UserData)
+   
+   function HandleChange(e){
+    setData(e.target.value)
+    
+   }
+
+   function HandleClick(){
+    let newData = UserData.filter((item)=>item.name.toLowerCase().includes(data.toLowerCase()) || item.department.toLowerCase().includes(data.toLowerCase()))
+setUseData(newData)
+   }
+    
+
+    return (
+        <>
+        <label for="">
+            <input type="text" placeholder = "🔍 Search By Name and department ......" onChange = {HandleChange}/>
+        </label>
+        <button onClick = {HandleClick}>Search</button>
+       
+        <div className = "itemDis">
+        {UseData.map((item, index)=>
+            <div key = {index}>
+                <p>Name : {item.name}</p>
+                <p>Age : {item.age}</p>
+                <p>Experience : {item.experience}</p>
+                <p>Department : {item.department}</p>
+                <p>Salary : {item.salary}</p>
+         </div>
+     )} 
+        </div>
+        </>
+    )
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<UserProfile/>)
+
+  </script>
+</html>
