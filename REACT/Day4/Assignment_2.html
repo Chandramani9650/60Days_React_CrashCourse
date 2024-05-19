@@ -17,34 +17,63 @@
     function ToDoList(){
   const[todo, settodo] = React.useState([])
   const[status, setstatus] = React.useState(false)
+  const [data, setData] = React.useState("")
+ 
 
-         function AddTODo(){
+
+     function AddTODo(){
+
+      
             return(
                 <>
                 <table>
                     <thead>
+                      <th>Enter ToDo</th>
+                      <th>Status</th>
+                      <th>Delete</th>
                     </thead>
+                    <tbody>
+                     {todo.map((item, index)=>
+                    <tr key = {index}>
+                      <td>{item.data}</td>
+                      <td>{item.status?"Completed":"Pending"}</td>
+                      <td><button onClick= {()=>Handleclick(index)}>Delete</button></td>
+                      </tr>)}
+                    </tbody>
                 </table>
                 
                 </>
             )
          }
+      function Handleclick(index){
+        const newTodo = todo.filter((_, i) => i !== index);
+        settodo(newTodo);
+       
+      }
 
         function Handlesubmit(e){
         e.preventDefault()
+        settodo([...todo,{data,status}])
+        console.log(todo);
+        setData(""); 
+        setstatus(false); 
+
         }
+
+        
 
         return(
             <>
             <h1>Insert TODO</h1>
             <form action="" onSubmit = {Handlesubmit}>
             <label for="">Enter TODO</label>
-            <input type="text" placeholder= "enter todo" value={todo} onChange = {(e)=>settodo(e.target.value)}/><br/>
+            <input type="text" placeholder= "enter todo" value={data} onChange = {(e)=>setData(e.target.value)}/><br/>
        <label for="">Marked status</label>
-         <input type="checkbox" /><br/>
+         <input type="checkbox"  checked={status} onChange = {(e)=>setstatus(e.target.checked)}/><br/>
          <input type="submit"/>
 
                 </form>
+                <AddTODo/>
             </>
         )
     }
