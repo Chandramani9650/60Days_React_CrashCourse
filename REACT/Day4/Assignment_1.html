@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        .greet{
+                background-color: antiquewhite;
+                padding: 10px;
+                
+                width: 400px;
+                margin: auto;
+                margin-top: 10px;
+                font-size: 30px;
+                text-align: center;
+                font-weight: 700;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+let arr = []
+    function GreetingCard({greeting, name}){
+        console.log(name);
+   return(
+    <>
+   <div className="greet"> {greeting}, {name}</div>
+    </>
+   )
+    }
+
+
+    function App(){
+       let arr = [{name:"Alice", message:"Hello"},
+       {name:"cmmaurya", message:"Hello"},
+       {name:"manoj", message:"Good Morning"},
+       {name:"pankaj", message:"Hi "},
+       ]
+        return (
+            <>
+            {arr.map((item, index)=>
+            <GreetingCard key={index} greeting={item.message} name={item.name}/>)}
+            </>
+        )
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>)
+  </script>
+</html>
