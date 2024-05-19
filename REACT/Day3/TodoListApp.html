@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root">
+
+    </div>
+    <div id="Display_Data">
+
+    </div>
+    <!-- <p>cklkdaskd</p> -->
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go herefun
+    let ev;
+    let arr = []
+    let dissplay = document.getElementById("Display_Data")
+   function ToDo(){
+    const[task, settask] = React.useState([])
+    const[Status, setStatus] = React.useState("")
+
+ function Filter(){
+ function HandlFilter(e){
+  let val = e.target.value
+
+if(val=="All"){
+  settask(task)
+}else if(val=="Active"){
+  let data = task.filter((item)=>item.completed==false)
+  settask(data)
+}else if(val=="completed"){
+  let data = task.filter((item)=>item.completed==true)
+  settask(data)
+}else{
+  settask(task)
+}
+ }
+
+
+  return(
+    <>
+ 
+    <select name="" id="" onChange={HandlFilter}>
+      <option value="">Apply filter</option>
+      <option value="All">All</option>
+      <option value="Active">Active</option>
+      <option value="completed">Completed</option>
+    </select>
+    </>
+  )
+ }
+    
+
+    function HandleChange(event){
+      ev = event.target
+     setStatus(event.target.value)
+     
+    
+     
+    }
+    function Toggle(ind){
+ 
+   let data = task.filter((item,i)=>i!=ind)
+   settask(data)
+  
+    }
+    function AddTask(){
+     
+    settask([...task, {title:Status,completed:false}])
+    setStatus(ev.value = "")
+   
+
+    }
+    function UpdateStatus(index){
+      let updated = [...task]
+      updated[index].completed = !updated[index].completed
+      settask(updated)
+
+      // console.log(task);
+    }
+
+    return(
+      <>
+       <Filter/>
+      
+          <input type="text"  onChange={HandleChange}/>
+            <button onClick={AddTask}>Add Task</button>
+            {task.map((item, i)=>
+              <div key={i}>
+                <input type="checkbox" checked={Status.completed} onChange={()=>UpdateStatus(i)}/> 
+               
+               {item.title}
+               <button onClick={()=>Toggle(i)}>Remove</button>
+                </div>
+             )}
+        
+      </>
+    )
+    }
+  
+    ReactDOM.createRoot(document.getElementById("root")).render(<ToDo/>)
+    
+  </script>
+</html>

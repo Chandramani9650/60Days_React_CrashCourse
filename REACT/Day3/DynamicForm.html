@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function App(){
+        const[hobby, sethobby] = React.useState('')
+        const [Aray, setAray] = React.useState([])
+        
+        
+        function Handlesubmit(e){
+            e.preventDefault()
+           setAray([...Aray,hobby])
+          
+        
+
+        }
+
+        function RemoveData(index){
+         
+          if(index>0){
+            let newdata = Aray.filter((item, i)=>i!=index)
+         setAray(newdata)
+          }
+        }
+
+    
+       
+
+        return(
+            <>
+            <form action="" onSubmit = {Handlesubmit}>
+              <input type="text" placeholder = "Enter your Hobby" value={hobby} onChange = {(e)=>sethobby(e.target.value)} />
+                <input type="submit"/>
+                </form>
+              
+           {Aray.map((item, index)=>
+      <div key = {index}>
+        <p>{item}   <button onClick = {()=> RemoveData(index)}>Remove</button></p>
+       
+        </div> )}
+            </>
+        )
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>)
+  </script>
+</html>

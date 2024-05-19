@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        input{
+           padding: 10px 20px 10px 20px;
+           display: flex;
+           margin: auto;
+           margin-bottom: 40px;
+        }
+        .color{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    function App(){
+        const [color, setcolor] = React.useState("")
+        function HandleInput(e){
+        setcolor(e.target.value)
+        console.log(typeof(color)=="string");
+       
+
+        }
+        
+
+
+        return(
+            <>
+            
+                <input type="text"  placeholder="enter Yourcolor code" onChange = {HandleInput}/>
+                <div className="color" style = {{width:"500px", height:"400px",margin:"auto", backgroundColor:color==""?"red":color}}>
+                    Enter Your color in Box and see here
+    
+</div>
+            </>
+        )
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>)
+  </script>
+</html>
