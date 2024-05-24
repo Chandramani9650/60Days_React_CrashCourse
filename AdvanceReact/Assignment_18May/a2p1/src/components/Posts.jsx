@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Post from "./Post";
 import LoadingIndicator from "./LoadingIndicator";
@@ -10,29 +10,20 @@ function Posts() {
   const [error, setError] = useState(false);
 
   async function fetchAndUpdateData() {
-    setLoading(true)
-      /*Complete the missing code*/
-    
     try {
-        /*Complete the missing code*/
-      let response = await axios.post("https://reqres.in/api/users",{
-        title:"hello world get your response",
-        body:"welcome"
-      })
-      setPosts([...posts, response.data])
-   setLoading(false)
+     const response = await axios({
+      method:"get",
+      url:"https://reqres.in/api/users"
+     })
+     setPosts(response?.data?.data)
+     console.log(posts);
+      setLoading(false);
     } catch (error) {
-      {
-        /*Complete the missing code*/
-      }
-      setError(true)
-      setLoading(false)
+      setError(true);
+      setLoading(false);
     }
-  }
-
-useEffect(()=>{
-  fetchAndUpdateData()
-},[])
+    }
+  
 
   if (loading) {
     return <LoadingIndicator />;
@@ -42,13 +33,19 @@ useEffect(()=>{
     return <ErrorIndicator />;
   }
 
+  // useEffect(()=>{
+  //   fetchAndUpdateData()
+  // },[])
   return (
     <div>
       <h1>List of Posts</h1>
-
+      <button onClick={fetchAndUpdateData}>
+        Click to display list of posts
+      </button>
       {/*Complete the missing code*/}
-      {posts.map((item, index)=>
-      <Post key={index} title={item.title} body={item.body}/>)}
+      {posts.map(post => (
+        <Post key={post.id} title={post.first_name} body={post.last_name} />
+      ))}
     </div>
   );
 }
