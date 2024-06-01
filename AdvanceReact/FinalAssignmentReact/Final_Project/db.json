@@ -1,0 +1,172 @@
+{
+  "tickets": [
+    {
+      "id": "1",
+      "title": "product damage",
+      "description": "received damaged product and broken cover",
+      "assignee": "Rahul",
+      "status": "pending",
+      "priority": 0
+    },
+    {
+      "id": "2",
+      "title": "late delivery",
+      "description": "package arrived later than expected",
+      "assignee": "John",
+      "status": "progress",
+      "priority": 1
+    },
+    {
+      "id": "3",
+      "title": "incorrect item",
+      "description": "received a different item than ordered",
+      "assignee": "Mary",
+      "status": "complete",
+      "priority": 2
+    },
+    {
+      "id": "4",
+      "title": "refund request",
+      "description": "requesting a refund for the product",
+      "assignee": "Priya",
+      "status": "complete",
+      "priority": 1
+    },
+    {
+      "id": "5",
+      "title": "payment issue",
+      "description": "issue with the payment processing",
+      "assignee": "Amit",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "6",
+      "title": "technical support",
+      "description": "need technical support for the device",
+      "assignee": "David",
+      "status": "progress",
+      "priority": 2
+    },
+    {
+      "id": "7",
+      "title": "missing parts",
+      "description": "some parts are missing from the package",
+      "assignee": "Sophia",
+      "status": "complete",
+      "priority": 1
+    },
+    {
+      "id": "8",
+      "title": "warranty claim",
+      "description": "claiming warranty for the defective product",
+      "assignee": "Liam",
+      "status": "progress",
+      "priority": 0
+    },
+    {
+      "id": "9",
+      "title": "account issue",
+      "description": "issue with accessing account",
+      "assignee": "Emma",
+      "status": "progress",
+      "priority": 3
+    },
+    {
+      "id": "10",
+      "title": "order cancellation",
+      "description": "requesting cancellation of the order",
+      "assignee": "Mia",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "11",
+      "title": "product damage",
+      "description": "received damaged product and broken cover",
+      "assignee": "Rahul",
+      "status": "pending",
+      "priority": 0
+    },
+    {
+      "id": "12",
+      "title": "late delivery",
+      "description": "package arrived later than expected",
+      "assignee": "John",
+      "status": "complete",
+      "priority": 1
+    },
+    {
+      "id": "13",
+      "title": "incorrect item",
+      "description": "received a different item than ordered",
+      "assignee": "Mary",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "id": "14",
+      "title": "refund request",
+      "description": "requesting a refund for the product",
+      "assignee": "Priya",
+      "status": "progress",
+      "priority": 2
+    },
+    {
+      "id": "15",
+      "title": "payment issue",
+      "description": "issue with the payment processing",
+      "assignee": "Amit",
+      "status": "complete",
+      "priority": 1
+    },
+    {
+      "id": "16",
+      "title": "technical support",
+      "description": "need technical support for the device",
+      "assignee": "David",
+      "status": "pending",
+      "priority": 0
+    },
+    {
+      "id": "18",
+      "title": "warranty claim",
+      "description": "claiming warranty for the defective product",
+      "assignee": "Liam",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "id": "19",
+      "title": "account issue",
+      "description": "issue with accessing account",
+      "assignee": "Emma",
+      "status": "complete",
+      "priority": 1
+    },
+    {
+      "id": "20",
+      "title": "order cancellation",
+      "description": "requesting cancellation of the order",
+      "assignee": "Mia",
+      "status": "pending",
+      "priority": 0
+    },
+    {
+      "id": "b964",
+      "title": "Rahul",
+      "description": "Suman jha maurya",
+      "assignee": "Abhishek prajapati",
+      "status": "pending",
+      "priority": "3"
+    },
+    {
+      "title": "ajay",
+      "description": "rajesh",
+      "assignee": "Abhishek prajapati",
+      "status": "completed",
+      "priority": "9",
+      "id": "f808"
+    }
+  ]
+}
