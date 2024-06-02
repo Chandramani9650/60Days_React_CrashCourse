@@ -6,7 +6,7 @@ const Navbar = () => {
    <Flex justifyContent='space-around'>
     <Link to='/'>Home</Link>
     <Link to='/login'>Login</Link>
-    <Link to='/productdetail/:id'>Product Detail</Link>
+    <Link to='//productdetail/:id'>Product Detail</Link>
    </Flex>
   )
 }

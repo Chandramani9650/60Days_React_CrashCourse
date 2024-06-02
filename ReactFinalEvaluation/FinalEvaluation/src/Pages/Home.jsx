@@ -19,12 +19,12 @@ const [filterdata,setfilterData] = useState("")
    setloading(true)
    const query = {}
    if(sortdata){
-     query._sort = "price";
-     query._order = sortdata
+     query.sort = "price";
+     query.order = sortdata
  
    }
    if(filterdata){
-     query.status = filterdata
+     query.filter = filterdata
      console.log(filterdata);
  
  
@@ -46,8 +46,8 @@ const [filterdata,setfilterData] = useState("")
   }
 
   useEffect(()=>{
-    fetchData()
-  },[])
+    fetchData(sortdata,filterdata)
+  },[sortdata,filterdata])
   if(loading){
     return <Loading/>
   }
@@ -65,8 +65,8 @@ const [filterdata,setfilterData] = useState("")
   <Select placeholder='Select option' onChange = {(e)=>setfilterData(e.target.value)}>
   <option value='men'>MEN</option>
   <option value='women'>WOMEN</option>
-  <option value='kid'>KID</option>
-  <option value='HomeDecor'>HomeDecor</option>
+  <option value='kids'>KID</option>
+  <option value='homedecor'>HomeDecor</option>
 
   </Select>
     </Flex>
